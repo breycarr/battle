@@ -15,4 +15,14 @@ describe Player do
       expect(subject.name).to eq("David")
     end
   end
+
+  describe 'hit points' do
+    it "gives the player hit points" do
+      expect(subject.hits).to eq(100)
+    end
+
+    it "deducts hit points when an attack is received" do
+      expect { subject.receive_attack }.to change { subject.hits }.by -10
+    end
+  end
 end
