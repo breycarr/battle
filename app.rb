@@ -22,13 +22,9 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  post '/attack' do
-    redirect '/result'
-  end
-
-  get '/result' do
+  get '/attack' do
     @player1 = session[:player1]
     @player2 = session[:player2]
-    erb(:result)
+    erb(:attack)
   end
 end
