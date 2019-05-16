@@ -9,6 +9,10 @@ class Player
     @hits = STARTING_HITS
   end
 
+  def attack(player)
+    player.receive_attack
+  end
+
   def receive_attack
     @hits -= 10
   end
